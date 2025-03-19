@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-pv-tppdb-0
+  labels:
+    type: local
+    app: tppdb
+spec:
+  storageClassName: my-storage-class
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data/postgres-tppdb-0"
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem

@@ -31,7 +31,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: tppbe
-        image: dengol/betpp-app:1.0.0
+        image: dengol/betpp:1.0.0
         ports:
         - containerPort: 5001
           name: tppbe

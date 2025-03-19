@@ -35,13 +35,20 @@ spec:
         ports:
         - containerPort: 5432
           name: psql
+        env:
+        - name: POSTGRES_USER
+          value: "postgres"
+        - name: POSTGRES_PASSWORD
+          value: "password"
+        - name: POSTGRES_DB
+          value: "postgres"
         volumeMounts:
         - name: postgres
           mountPath: /var/lib/postgresql/data
         lifecycle:
           postStart:
             exec:
-              command: ["/bin/sh", "-c", "psql -f https://raw.githubusercontent.com/tpc2k/TPP/main/TPP.sql"]
+              command: ["/bin/sh", "-c", "apt update -y && apt -y install curl &&  curl https://raw.githubusercontent.com/Denis-Golkov/k8s/refs/heads/main/postgresql.sql | psql -U postgres"]
   volumeClaimTemplates:
   - metadata:
       name: postgres

@@ -31,7 +31,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: tppfe
-        image: dengol/fetpp-app:1.0.0
+        image: dengol/fetpp:1.0.1
         ports:
         - containerPort: 8081
           name: tppfe
