@@ -1,0 +1,50 @@
+distances = {
+    "Voyager 1": 163,
+    "Voyager 2": 136,
+    "Pioneer": 88,
+    "New Horizons": 58,
+    "Pioneer 11": 44
+}
+
+def main():
+    for name in distances.keys():
+        print(f"{name} is {distances[name]} Au from Earth")
+
+main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Incorrect syntax:
+-- INSERT (user_id,domain_id) VALUES (9, 1);
+
+-- Correct syntax:
+INSERT INTO user_domains (user_id, domain_id) VALUES (9, 1);
+
+-- You can also insert multiple rows at once:
+INSERT INTO user_domains (user_id, domain_id) 
+VALUES 
+    (9, 1),
+    (9, 2),
+    (9, 3);
+
+-- If you need to specify the table schema:
+INSERT INTO public.user_domains (user_id, domain_

@@ -1,0 +1,15 @@
+prod:
+  db:
+    dbname: postgres
+    user: postgres
+    password: password
+    host: localhost
+    port: 5432
+
+dev:
+  db:
+    dbname: postgres
+    user: postgres
+    password: password
+    host: my_postgres
+    port: 5432    

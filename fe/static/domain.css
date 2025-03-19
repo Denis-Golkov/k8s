@@ -1,0 +1,715 @@
+/* Global styles */
+body {
+    background-color: #121212; /* Dark background */
+    color: #00bcd4; /* Blue text color */
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+    margin: 0;
+    padding: 0;
+    background-image: url('tpp.gif'); /* Add background image */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #fff; /* White text for contrast *//* Global styles */
+body {
+    background-color: #121212; /* Dark background */
+    color: #00bcd4; /* Blue text color */
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #00bcd4;
+    margin-top: 20px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+form label {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #00bcd4;
+}
+
+form input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: 2px solid #00bcd4;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0097a7;
+}
+
+/* Global styles */
+body {
+    background-color: #121212; /* Dark background */
+    color: #00bcd4; /* Blue text color */
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+    margin: 0;
+    padding: 0;
+    background-image: url('tpp.gif'); /* Add background image */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #fff; /* White text for contrast */
+}
+
+/* Styling for the outer div container */
+div {
+    width: 90%;
+    margin: 50px auto;
+   
+
+    padding: 20px;
+    background-color: #172f7da3; /* Slightly lighter background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+}
+
+/* Header styles */
+h1, h2 {
+    text-align: center;
+    color: #00bcd4;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Styling for form container */
+form {
+    display: flex;
+    flex-wrap: wrap; /* Allow inputs to wrap to the next line if necessary */
+    gap: 10px; /* Space between form elements */
+    align-items: center; /* Align form elements in the same row */
+    margin-top: 20px;
+}
+
+/* Styling for domain form elements */
+#domain-form {
+    display: flex;
+    gap: 10px; /* Space between form elements */
+    align-items: center;
+}
+
+/* Styling for domain form label */
+#domain-form label {
+    font-size: 16px;
+    color: #00bcd4;
+    margin-right: 10px;
+}
+
+/* Styling for domain form input */
+#domain-form input {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 2px solid #00bcd4;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+/* Styling for domain form button */
+#domain-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#domain-form button:hover {
+    background-color: #0097a7;
+}
+
+/* Styling for the schedule form elements */
+#schedule-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Styling for schedule form label */
+#schedule-form label {
+    font-size: 16px;
+    color: #00bcd4;
+}
+
+/* Styling for number input and time input in schedule form */
+#schedule-form input[type="number"],
+#schedule-form input[type="time"] {
+   
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 2px solid #00bcd4;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    width: 120px; /* Ensures inputs have a consistent width */
+}
+
+/* Styling for schedule form button */
+#schedule-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#schedule-form button:hover {
+    background-color: #0097a7;
+}
+
+/* Styling for the message below the schedule form */
+#schedule-message {
+    text-align: center;
+    color: #00bcd4;
+    font-size: 16px;
+    margin-top: 20px;
+}
+/* Table styles */
+table {
+    width: 90%;
+    margin: 50px auto;
+    
+    border-collapse: collapse;
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background-color: #00bcd4;
+    color: #fff;
+    font-size: 18px;
+}
+
+table td {
+    background-color: #333;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #444;
+}
+
+table tr:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+table button.remove-btn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table button.remove-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Pagination styles */
+#pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#pagination button {
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#pagination button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+#pagination button:hover {
+    background-color: #0097a7;
+}
+
+#page-number {
+    color: #fff;
+    font-size: 16px;
+    margin: 0 20px;
+}
+
+ 
+
+
+/* Sidebar Container */
+.sidebar {
+    width: 220px; /* Fixed width */
+    height: 100vh; /* Full viewport height */
+    background-color: #1f1f1f; /* Dark background */
+    color: #00bcd4; /* Blue text color */
+    position: fixed; /* Stays fixed while scrolling */
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1000;
+}
+
+/* Sidebar Header */
+.sidebar h2 {
+    color: #00bcd4;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 1px solid #00bcd4;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+/* Sidebar Links */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #00bcd4;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #00bcd4;
+    color: #121212; /* Dark text for contrast */
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 270px; /* Matches the sidebar width + spacing */
+    padding: 20px;
+    background-color: #121212; /* Matches the dark theme */
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+/* Global styles */
+body {
+    background-color: #121212; /* Dark background */
+    color: #00bcd4; /* Blue text color */
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+    margin: 0;
+    padding: 0;
+    background-image: url('tpp.gif'); /* Add background image */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+/* Smooth page transitions */
+body {
+    animation: fadePageIn 1.2s ease-in-out;
+}
+
+@keyframes fadePageIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header styles */
+h1, h2 {
+    text-align: center;
+    color: #00bcd4;
+    font-size: 24px;
+    margin-bottom: 20px;
+    animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+form input, form button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:hover, form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.4);
+}
+
+/* Table styles */
+table {
+    width: 78%;
+    margin: 50px auto;
+    border-collapse: collapse;
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+table tr {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+table tr:hover {
+    transform: scale(1.02);
+    background-color: #333;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background-color: #1f1f1f;
+    color: #00bcd4;
+    position: fixed;
+    top: 0;
+    left: -240px; /* Initially hidden off-screen */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1000;
+    transition: transform 0.5s ease;
+    transform: translateX(0);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Sidebar slide-in animation */
+.sidebar:hover {
+    transform: translateX(240px);
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #00bcd4;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #00bcd4;
+    color: #121212;
+    transform: scale(1.1);
+}
+
+/* Pagination animations */
+#pagination button {
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#pagination button:hover {
+    transform: scale(1.1);
+    background-color: #0097a7;
+}
+
+/* Page content fade-in effect */
+.main-content {
+    margin-left: 270px;
+    padding: 20px;
+    background-color: #121212;
+    color: #fff;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+}
+
+/* Styling for the outer div container */
+div {
+    width: 80%; /* Makes the content take 80% of the screen width */
+    margin: 0 auto; /* Centers the content horizontally */
+    padding: 20px;
+    background-color: #172f7da3; /* Slightly lighter background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+}
+
+/* Header styles */
+h1, h2 {
+    text-align: center;
+    color: #00bcd4;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Styling for form container */
+form {
+    display: flex;
+    flex-wrap: wrap; /* Allow inputs to wrap to the next line if necessary */
+    gap: 10px; /* Space between form elements */
+    align-items: center; /* Align form elements in the same row */
+    margin-top: 20px;
+}
+
+/* Styling for domain form elements */
+#domain-form {
+    display: flex;
+    gap: 10px; /* Space between form elements */
+    align-items: center;
+}
+
+/* Styling for domain form label */
+#domain-form label {
+    font-size: 16px;
+    color: #00bcd4;
+    margin-right: 10px;
+}
+
+/* Styling for domain form input */
+#domain-form input {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 2px solid #00bcd4;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+/* Styling for domain form button */
+#domain-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#domain-form button:hover {
+    background-color: #0097a7;
+}
+
+/* Styling for the schedule form elements */
+#schedule-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Styling for schedule form label */
+#schedule-form label {
+    font-size: 16px;
+    color: #00bcd4;
+}
+
+/* Styling for number input and time input in schedule form */
+#schedule-form input[type="number"],
+#schedule-form input[type="time"] {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 2px solid #00bcd4;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    width: 120px; /* Ensures inputs have a consistent width */
+}
+
+/* Styling for schedule form button */
+#schedule-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#schedule-form button:hover {
+    background-color: #0097a7;
+}
+
+/* Styling for the message below the schedule form */
+#schedule-message {
+    text-align: center;
+    color: #00bcd4;
+    font-size: 16px;
+    margin-top: 20px;
+}
+/* Table styles */
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background-color: #00bcd4;
+    color: #fff;
+    font-size: 18px;
+}
+
+table td {
+    background-color: #333;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #444;
+}
+
+table tr:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+table button.remove-btn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table button.remove-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Pagination styles */
+#pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#pagination button {
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#pagination button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+#pagination button:hover {
+    background-color: #0097a7;
+}
+
+#page-number {
+    color: #fff;
+    font-size: 16px;
+    margin: 0 20px;
+}

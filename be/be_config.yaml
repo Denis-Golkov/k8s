@@ -1,0 +1,8 @@
+app_name: "Backend App"
+log_file: "be_app.log"
+log_directory: "logs"
+log_level: "DEBUG"
+cert_path: "example_certificate.pem"
+domain_file: "domain.json" 
+users_file: "users.json"
+port: 5001

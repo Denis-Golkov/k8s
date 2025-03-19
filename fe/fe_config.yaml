@@ -1,0 +1,9 @@
+app_name: "Frontend App"
+backend_url: "http://betpptest:5001"
+log_directory: "logs"
+secret_key: "your_secret_key"
+domain_file: "domain.json"
+users_file: "users.json"
+template_folder: "templates" # Added in case
+static_folder: "static" # Added in case
+port: 5000 # Added in case

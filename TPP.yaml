@@ -1,0 +1,149 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tppdb
+  labels:
+    app: tppdb
+spec:
+  ports:
+  - port: 5432
+    name: web
+  clusterIP: None
+  selector:
+    app: tppdb
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tppdb
+spec:
+  selector:
+    matchLabels:
+      app: tppdb # has to match .spec.template.metadata.labels
+  serviceName: "tppdb"
+  replicas: 1 # by default is 1
+  minReadySeconds: 10 # by default is 0
+  template:
+    metadata:
+      labels:
+        app: tppdb # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: psql
+        image: postgres:14.0
+        ports:
+        - containerPort: 5432
+          name: psql
+        volumeMounts:
+        - name: postgres
+          mountPath: /var/lib/postgresql/data
+        lifecycle:
+          postStart:
+            exec:
+              command: ["/bin/sh", "-c", "psql -f https://raw.githubusercontent.com/tpc2k/TPP/main/TPP.sql"]
+  volumeClaimTemplates:
+  - metadata:
+      name: postgres
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "my-storage-class"
+      resources:
+        requests:
+          storage: 1Gi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tppbe
+  labels:
+    app: tppbe
+spec:
+  ports:
+  - port: 5001
+    name: be
+  clusterIP: None
+  selector:
+    app: tppbe
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tppbe
+spec:
+  selector:
+    matchLabels:
+      app: tppbe # has to match .spec.template.metadata.labels
+  serviceName: "tppbe"
+  replicas: 1 # by default is 1
+  minReadySeconds: 10 # by default is 0
+  template:
+    metadata:
+      labels:
+        app: tppbe # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: tppbe
+        image: dengol/betpp-app:1.0.0
+        ports:
+        - containerPort: 5001
+          name: tppbe
+        env:
+        - name: DB_HOST
+          value: "tppdb"
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_USER
+          value: "postgres"
+        - name: DB_PASSWORD
+          value: "password"
+        - name: DB_NAME
+          value: "postgres"
+        - name: ENVIRONMENT
+          value: "prod"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tppfe
+  labels:
+    app: tppfe
+spec:
+  ports:
+  - port: 8081
+    name: fe
+  clusterIP: None
+  selector:
+    app: tppfe
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tppfe
+spec:
+  selector:
+    matchLabels:
+      app: tppfe # has to match .spec.template.metadata.labels
+  serviceName: "tppfe"
+  replicas: 1 # by default is 1
+  minReadySeconds: 10 # by default is 0
+  template:
+    metadata:
+      labels:
+        app: tppfe # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: tppfe
+        image: dengol/fetpp-app:1.0.0
+        ports:
+        - containerPort: 8081
+          name: tppfe
+        env:
+        - name: ENVIRONMENT
+          value: "prod"
+        - name: BACKEND_URL
+          value: "http://tppbe:5001"

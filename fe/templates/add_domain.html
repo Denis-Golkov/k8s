@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Domain</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/static/domain.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Welcome {{ username }}</h2>
+        <ul>
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/add_domain_page">Add Domain</a></li>
+            <li><a href="/domain_files">add domain file</a></li>
+            <li class="logout"><a href="/logout" >Logout</a></li>
+        </ul>
+    </div>
+
+    <div>
+    <h2>Add a New Domain</h2>
+    
+    <form id="add-domain-form">
+        <label for="domain">Enter Domain:</label>
+        <input type="text" id="domain" name="domain" placeholder="e.g., example.com" required>
+        <button type="submit">Add Domain</button>
+    </form>
+    </div>
+    <div style="text-align: center;" id="response-message"></div>
+
+    <script>
+        document.getElementById("add-domain-form").addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const domainInput = document.getElementById("domain").value;
+
+            const response = await fetch("/add_domain", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ domain: domainInput }),
+            });
+
+            const result = await response.json();
+            const responseMessage = document.getElementById("response-message");
+            responseMessage.textContent = result.error || "Domain added successfully!";
+            if (!result.error) {
+                document.getElementById("domain").value = "";  // Clear the input
+            }
+        });
+    </script>
+     <script src="/static/domain.js"></script>
+</body>
+</html>

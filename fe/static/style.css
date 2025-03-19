@@ -1,0 +1,108 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('tpp.gif'); /* Add background image */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #fff; /* White text for contrast */
+}
+
+/* Centered container styling */
+div {
+    background-color: rgba(3, 27, 29, 0.473); /* Dark gray for contrast */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 255, 0.5); /* Subtle blue shadow */
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    
+}
+
+/* Form heading */
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #1e90ff; /* Bright blue heading */
+}
+
+/* Input fields styling */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 2px solid #1e90ff; /* Blue border */
+    border-radius: 5px;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #00bfff; /* Lighter blue on focus */
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.5); /* Glowing blue focus */
+    outline: none;
+}
+
+/* Submit button styling */
+button {
+    background-color: #1e90ff; /* Bright blue button */
+    color: #fff; /* White text */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #00bfff; /* Lighter blue on hover */
+    box-shadow: 0 4px 12px rgba(30, 144, 255, 0.7); /* Stronger blue glow */
+}
+
+/* Response message styling */
+#responseMessage {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #00bfff; /* Lighter blue for messages */
+}
+
+/* Link styling */
+a {
+    color: #1e90ff; /* Bright blue links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00bfff; /* Lighter blue on hover */
+    text-decoration: underline;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 480px) {
+    div {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    input[type="text"], input[type="password"], button {
+        font-size: 14px;
+    }
+}
