@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tppdb
+  labels:
+    app: tppdb
+spec:
+  ports:
+  - port: 5432
+    name: web
+  clusterIP: None
+  selector:
+    app: tppdb
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tppdb
+spec:
+  selector:
+    matchLabels:
+      app: tppdb # has to match .spec.template.metadata.labels
+  serviceName: "tppdb"
+  replicas: 1 # by default is 1
+  minReadySeconds: 10 # by default is 0
+  template:
+    metadata:
+      labels:
+        app: tppdb # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: psql
+        image: postgres:14.0
+        ports:
+        - containerPort: 5432
+          name: psql
+        volumeMounts:
+        - name: postgres
+          mountPath: /var/lib/postgresql/data
+        lifecycle:
+          postStart:
+            exec:
+              command: ["/bin/sh", "-c", "psql -f https://raw.githubusercontent.com/tpc2k/TPP/main/TPP.sql"]
+  volumeClaimTemplates:
+  - metadata:
+      name: postgres
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "my-storage-class"
+      resources:
+        requests:
+          storage: 1Gi

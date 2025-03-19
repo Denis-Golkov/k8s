@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tppfe
+  labels:
+    app: tppfe
+spec:
+  ports:
+  - port: 8081
+    name: fe
+  clusterIP: None
+  selector:
+    app: tppfe
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tppfe
+spec:
+  selector:
+    matchLabels:
+      app: tppfe # has to match .spec.template.metadata.labels
+  serviceName: "tppfe"
+  replicas: 1 # by default is 1
+  minReadySeconds: 10 # by default is 0
+  template:
+    metadata:
+      labels:
+        app: tppfe # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: tppfe
+        image: dengol/fetpp-app:1.0.0
+        ports:
+        - containerPort: 8081
+          name: tppfe
+        env:
+        - name: ENVIRONMENT
+          value: "prod"
+        - name: BACKEND_URL
+          value: "http://tppbe:5001"
