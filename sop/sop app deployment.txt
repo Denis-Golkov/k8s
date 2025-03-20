@@ -1,0 +1,36 @@
+app deployment:
+---------------
+1: get the files
+git clone https://github.com/Denis-Golkov/k8s.git
+
+2: cd to --- > /home/cp/k8s/k8s
+contain all yaml files for deployment.
+
+2: create pv 
+kubectl apply -f postgres-pv.yaml
+* to delete the pv use:
+kubectl patch pv postgres-pv-tppdb-0 -p '{"metadata":{"finalizers":null}}'
+
+3: apply db.yaml
+kubectl apply -f db.yaml
+to see the status of the pod in live --- > 
+for debug:
+-- > "kubectl logs tppdb-0 -f" 
+-- > "kubectl exec -i tppdb-0 -- /bin/sh"
+-- > "kubectl get pod -o wide"
+-- > show ip addres -- > "ip add show"
+-- > see pods in live refresh -- > "watch -n1 kubectl get pod"
+
+4: apply be.yaml
+kubectl apply -f be.yaml
+delete pod ---> docker delete -f be.yaml
+
+5: apply fe.yaml
+kubectl apply -f fe.yaml
+debuging:
+kubectl exec -i tppfe-0 -- /bin/bash
+ls
+cat fe_app.py -- > to see if the right version of code was downloaded
+
+6: apply expose port to be able get the app through the web 
+kubectl apply -f tppfe-nodeport.yaml

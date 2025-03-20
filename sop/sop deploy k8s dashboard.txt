@@ -1,0 +1,31 @@
+---------------------------
+Deploy Kubernetes Dashboard
+
+Deploy the Kubernetes Dashboard using predefined YAML manifests located in yamls/.
+
+Actions: Apply the official dashboard yaml: 
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
+Apply the dashboard deployment:
+
+kubectl apply -f yamls/dashboard-service.yaml
+
+Apply the service account:
+
+kubectl apply -f yamls/service-account.yaml
+
+Apply the RBAC role binding:
+
+kubectl apply -f yamls/rbac.yaml
+
+Generate the access token:
+
+kubectl apply -f yamls/secret.yaml
+
+kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
+
+Access the Dashboard at:
+
+https://{control-plane-public-ip}:30000
+
+Use the generated token to log in.
